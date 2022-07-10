@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="head">
+           <a href="index.html"><img src="logo.png" alt="" class="sitelogo"></a>
+        <div class="colorMode">
+            <img src="Sun.png" alt="" class="lightMode">
+            <img src="moon.png" alt="" class="darkMode">
+        </div>
+        <button class="title-head btn--show-modal ">Login To Get Started</button>
+      <img src="ma.jpg" alt="" class="profileImg">
+    </div>
+    <div class="main-wrapper">
+        <div class="top">
+            <div class="dashboard"> 
+                <div class="ttlLab">Total Expenses:</div>
+                
+            <div class="ttlPrice">0</div>
+            </div>
+            <div class="chartss">
+            <div class="Summary-pie-chart">
+                <canvas id="myChart" width="50px" height="50px"></canvas>
+            </div>
+            <div class="divider"></div>
+            <div class="lineChart">
+                <canvas id="lineChart" width="50px" height="50px" ></canvas>
+            </div>
+        </div>
+        </div>
+        <div class="sectWrap">
+            <div class="sect-1">
+            <div class="transactionsTitle">
+                   <div class="trans-label"><h4 >Transactions History</h4></div>
+                   </div>
+            <div class="trans-con">
+
+            </div>
+                
+            </div>
+            <div class="sect-2">
+                <section class="modal">
+                    <h5 class="modal-head">Add a transaction</h5>
+                    <div class="modal-arrange">
+                       
+                        <div  class="modal-comp date"><img src="date.jpeg" alt="" class="date-img"><input type="date" class="date-value"> </div>
+                        <div class="modal-comp amount">  <div class="amount-curr">$</div> <input type="text" class="amount-input" placeholder="0"></div>
+                        <div  class="modal-comp category">  <div class=""><img src="category.png" class="category-img" alt=""></div> <div class ="category-title"> Choose Category</div> </div>
+                        <button class="submit">Done</button>
+                        
+                        <div class="category-select" id="category-select">
+                            <div class="select-category  house">
+                                <div class="select-category-house ">
+                                    <img src="house.png" alt="" class="img-select img-house">
+                                </div>
+                                <h6 class="select-category-utilities title title-house">House</h6>
+                            </div>
+                            <div class="select-category medical">
+                                <div class="select-category-medical ">
+                                    <img src="health.jpeg" alt="" class="img-select img-medical">
+                                </div>
+                                <h6 class="select-category-medical title title-medical">Medical</h6>
+                            </div>
+                            <div class="select-category  transport">
+                                <div class="select-category-transport ">
+                                    <img src="transport.png" alt="" class="img-select img-transport">
+                                </div>
+                                <h6 class="select-category-transport title title-transport">Transit</h6>
+                            </div>
+                            <div class="select-category  utilities">
+                                <div class="select-category-utilities">
+                                    <img src="utilities.jpeg" alt="" class="img-select img-utilities">
+                                </div>
+                                <h6 class="select-category-utilities title title-utilities">Utilities</h6>
+                            </div>
+                            <div class="select-category  food">
+                                <div class="select-category food">
+                                    <img src="food.png" alt="" class="img-select img-food">
+                                </div>
+                                <h6 class="select-category-food title title-food">Food</h6>
+                            </div>
+                            <div class="select-category  savings">
+                                <div class="select-category-savings">
+                                    <img src="savings.jpeg" alt="" class="img-select img-savings">
+                                </div>
+                                <h6 class="select-category- title title-insurance">Savings</h6>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+      
+    </div>
+    <!-- <div class="logoutBtn"><button >Logout &larr;</button></div> -->
+<div class="modal2">
+    <button class="btn--close-modal hidden">&times;</button>
+    <h2 class="modal__header">
+     Enter your details to
+       <span class="highlight" style="color: black;">Login</span>
+    </h2>
+<form class="modal__form">
+    <div class="modal__loginDetails">
+    <label >Username</label>
+    <input type="text" class="form-username"/>
+    <label>Password</label>
+    <input type="password"  class="form-password"/>
+</div>
+    <button class="loginBtn">Login &rarr;</button>
+  </form>
+</div>
+    <div class="overlay hidden"></div>
+    <script src="app.js"></script>
+</body>
+</html>
