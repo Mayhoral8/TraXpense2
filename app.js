@@ -8,7 +8,7 @@ const clear = document.querySelector('.delete')
 const categoryBtn = document.querySelector('.category-title');
 const categorySelect = document.querySelector('.category-select')
 const newBtn = document.querySelector('.btn-add');
-const overlay = document.querySelector('.overlay');
+
 const modal = document.querySelector('.modal')
 const loginBox = document.querySelector('.modal2');
 const amountInp = document.querySelector('.amount-input');
@@ -27,7 +27,7 @@ const pin = document.querySelector('.form-password');
 const mainWrapper = document.querySelector('.main-wrapper');
 const titleHead = document.querySelector('.title-head');
 const modal2 = document.querySelector('.modal2');
-// const overlay = document.querySelector('.overlay');
+const overlay = document.querySelector('.overlay1');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelector('.btn--show-modal');
 const username = document.querySelector('.form-username');
@@ -46,6 +46,8 @@ const transLabel = document.querySelector('.trans-label')
 const colorMode = document.querySelector('.colorMode')
 const transPrice = document.querySelector('.trans-price')
 const divider = document.querySelector('.divider')
+const newTrans = document.querySelector('.newTrans')
+
 
 let total = 0;
 let totalHouse = 0;
@@ -127,6 +129,7 @@ const updateUI = function(currAcc){
     currAcc.movements.map((mov, i) => {
         transCon.style.opacity = '100';
         transLabel.style.opacity = '100';
+        newTrans.style.opacity = '100';
         const expense = document.createElement('div')
         total = currAcc.movements.reduce((curr, acc) => curr += acc)
         ttlPrice.textContent = `$${Number(total)}`
@@ -186,7 +189,7 @@ const showdoughnut = function(){
     doughnut.style.opacity = '100';
 }
 const showAddTr = function(){
-    section2.style.opacity = '100';
+   
     colorMode.style.opacity = '100'
 }
 
@@ -200,7 +203,11 @@ if(userName.value === acc1.username && (+ pin.value) === acc1.pin){
     modal2.style.opacity = '0'
     overlay.classList.add('hidden');
     setTimeout(()=>    updateUI(acc1), 3000);
-   
+
+   newTrans.addEventListener('click', function(){
+    section2.style.opacity = '100';
+    overlay.classList.remove('hidden');
+   })
 }   
 
 
@@ -274,6 +281,8 @@ const updateUI2 = function(img, catg){
             expense.classList.remove('hidden')
             ttlPrice.textContent = `$${Number(total)}`
             transDate.value = '';
+            section2.style.opacity = '0';
+            overlay.classList.add('hidden');
             myChart.update()
         })
         }
@@ -427,6 +436,7 @@ const darkMode = function(){
     console.log(transactions)
     transCon.style.color = 'black';
     modal.style.backgroundColor = 'white'
+    
     transactions.map(mov=>{
        mov.style.border = '1px solid skyblue'
     })
@@ -435,6 +445,8 @@ const darkMode = function(){
     showDashboard.style.backgroundColor = '#1c659c'
     transCon.style.backgroundColor = 'white';
     transCon.style.color = 'black';
+    newTrans.style.color = 'black'
+    newTrans.backgroundColor = '#1c659c'
     modal.style.backgroundColor = 'rgb(46, 45, 45)';
     section2.style.backgroundColor = '#1c659c';
     barChart.options.plugins.legend.labels.color = 'white';
