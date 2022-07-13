@@ -226,7 +226,7 @@ margin: 0px 0px auto 20px;
   width: 40px;
   border: 2px solid skyblue;
   background-color: skyblue;
-  margin: 0px 30px;
+  margin: 0px 10px;
  }
 .chartss{
   display: flex;
@@ -625,7 +625,7 @@ color: white;
   margin: 0px auto;
 }
 .newTrans{
-  margin: -25px auto 0px auto;
+  margin: 5px auto 0px auto;
   font-size: 30px;
   background-color: skyblue;
   border-radius: 50%;
