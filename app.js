@@ -432,7 +432,6 @@ if(myChart != null){
 // myChart.data.datasets[0].data[dataOrder] += value;
 const darkMode = function(){
     transLabel.style.color = 'black';
-    mainWrapper.style.border = '1px solid #1c659c';
     transLabel.style.backgroundColor = '#1c659c';
     divider.style.backgroundColor = '#1c659c';
     showDashboard.style.color = 'black';
