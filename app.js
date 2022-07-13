@@ -58,6 +58,7 @@ let totalInsurance = 0;
 let totalSavings = 0
 let totalUtilities = 0;
 
+let barChart = null;
 let myChart = null;
 
 let imgSrc = '';
@@ -133,9 +134,11 @@ const updateUI = function(currAcc){
         const expense = document.createElement('div')
         total = currAcc.movements.reduce((curr, acc) => curr += acc)
         ttlPrice.textContent = `$${Number(total)}`
-        const deleteBtn = document.createElement('button')
+        const deleteBtn = document.createElement('h4')
         deleteBtn.classList.add('delete');
-        deleteBtn.textContent = 'Delete'
+        deleteBtn.textContent = 'delete';
+
+        console.log(deleteBtn)
         
         transCon.appendChild(expense)
        
@@ -170,7 +173,7 @@ const updateUI = function(currAcc){
 })
 
 }
-let barChart = null;
+
 
 loginBtn.addEventListener('click', function(e){
 e.preventDefault()
@@ -179,7 +182,7 @@ e.preventDefault()
   acc1.username = acc1.owner.split(' ').map(mov => mov.replace(mov[0], mov[0].toLowerCase())).map(mov => mov[0]).join('');
 
 //   ========================
-const ctx = document.getElementById('myChart').getContext('2d');
+
 
 
 const showMainWrapper = function(){
@@ -206,6 +209,7 @@ if(userName.value === acc1.username && (+ pin.value) === acc1.pin){
 
    newTrans.addEventListener('click', function(){
     section2.style.opacity = '100';
+    section2.classList.remove('hidden')
     overlay.classList.remove('hidden');
    })
 }   
@@ -227,9 +231,9 @@ const updateUI2 = function(img, catg){
             const expense = document.createElement('div')
             total += Number(amountInp.value);
         
-        const deleteBtn = document.createElement('button')
+        const deleteBtn = document.createElement('img')
         deleteBtn.classList.add('delete');
-        deleteBtn.textContent = 'Delete'
+        deleteBtn.src = 'delete.png'
         transCon.appendChild(expense);
         expense.innerHTML = `<div class="transactions">
         <div class="trans-imgCat">
@@ -255,7 +259,7 @@ const updateUI2 = function(img, catg){
             totalFood += Number(amountInp.value);
             updateChartValue(totalFood, 1)
         }
-        else if( catg === 'Transport'){
+        else if( catg === 'Transit'){
             totalTransport += Number(amountInp.value);
             updateChartValue(totalTransport, 2)
         }else if(catg === 'Medical'){
@@ -278,6 +282,7 @@ const updateUI2 = function(img, catg){
             categoryTitle.innerHTML = 'Category';
             imgCategory.src = ''
             imgCategory.src = `category.png`
+            section2.classList.add('hidden')
             expense.classList.remove('hidden')
             ttlPrice.textContent = `$${Number(total)}`
             transDate.value = '';
@@ -362,8 +367,8 @@ const updateUI2 = function(img, catg){
 
 
 const ctx2 = document.getElementById('lineChart').getContext('2d');
-if(myChart != null){
-    myChart.destroy();
+if(barChart != null){
+    barChart.destroy();
 }
 
  barChart = new Chart(ctx2,{
@@ -388,12 +393,13 @@ if(myChart != null){
     }
 })
 
+const ctx = document.getElementById('myChart').getContext('2d');
 if(myChart != null){
     myChart.destroy();
 }
 
 
- myChart = new Chart(ctx,{
+ myChart = new Chart(ctx, {
     type: 'pie',
     data: {
         labels: ['House', 'Food', 'Transit', 'Medical', 'Utilities', 'Savings'],
@@ -469,6 +475,7 @@ darkMdBtn.addEventListener('click', darkMode);
     section2.style.backgroundColor = 'white';
     transLabel.style.backgroundColor = 'skyblue';
     barChart.options.plugins.legend.labels.color = 'white';
+    newTrans.style.color = 'white'
     const transactions = Array.from(document.querySelectorAll('.transactions'));
     console.log(transactions)
     transactions.map(mov=>{
