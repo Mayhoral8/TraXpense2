@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    /* background-color: aliceblue; */
+    
 }
 .modal__form {
   margin: 0 2rem;
@@ -56,7 +56,7 @@ margin: 0px auto 0px 10px;
   padding: 0.5rem 1.0rem;
   border-radius: 10px;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  /* z-index: 1000; */
   opacity: 100;
   transition: all 0.5s;
   display: flex;
@@ -111,7 +111,7 @@ height: 800px;
 margin: 0px auto 0px auto;
 /* opacity: 0; */
 transition: all 1s;
-z-index: 4;
+/* z-index: 4; */
 }
 .sectWrap{
 display: flex;
@@ -209,16 +209,16 @@ box-shadow: 0px 0px 10px 3px rgba(200, 200, 200);
 }
 
 .lineChart{
-width: 60%;
-height: 60px;
-margin: 10px 0px auto 20px;
+width: 133px;
+/* height: 133px; */
+margin: 10px 0px auto 0px;
 /* margin-left: 10px; */
 /* border: 1px solid skyblue; */
 }
 .Summary-pie-chart{
-width: 70%;
+width: 155px;
 font-size: 2px;
-height: 100px;
+/* height: 155px; */
 margin: 0px 0px auto 20px;
 }
 .divider{
@@ -226,7 +226,7 @@ margin: 0px 0px auto 20px;
   width: 40px;
   border: 2px solid skyblue;
   background-color: skyblue;
-  margin-left: 20px;
+  margin: 0px 30px;
  }
 .chartss{
   display: flex;
@@ -297,6 +297,7 @@ h3{
   border-bottom-left-radius: 2px;
   border: 1px solid red;
   cursor: pointer;
+  
 }
 .item{
   width: 100%;
@@ -343,7 +344,7 @@ font-weight: bold;
   height: 200px;
   width: 250px;
   border: 1px solid skyblue;
-  z-index: 7;
+  /* z-index: 7; */
   border: none;
   border-radius: 10px;
   color: rgb(207, 206, 206);
@@ -461,8 +462,8 @@ color: white;
   width: 100%;
   height: 800px;
   background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(3px);
-  z-index: 5;
+  /* backdrop-filter: blur(3px); */
+  z-index: 0;
 }
 .category-select{
   position: absolute;
@@ -479,7 +480,7 @@ color: white;
   background-color: rgb(51, 51, 51);
   opacity: 0.7;
   cursor: pointer;
-  z-index: 5;
+  /* z-index: 5; */
 }
 .select-category{
     cursor: pointer;
@@ -739,7 +740,7 @@ color: white;
     padding: 2rem 4rem;
     border-radius: 10px;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-    z-index: 1000;
+    /* z-index: 1000; */
     opacity: 100;
     transition: all 0.5s;
     color: white;
@@ -862,12 +863,14 @@ body{
   flex-flow: column;
   width: 28%;
   margin: 40px 0px 20px 0px;
-  background-color: #f8fcfe;
-  height: 80%;
+  background-color: #dee0e0;
+  opacity: 0.9;
+  height: 40%;
   box-shadow: 0px 0px 10px 3px rgba(200, 200, 200);
   border-radius: 10px;
-  /* border: 1px solid gold; */
+ position: absolute;
   transition: all 0.5s;
+  z-index: 7;
 }
 .details{
   margin: 40px 0px 0px auto;
@@ -918,25 +921,26 @@ body{
 }
 
 .lineChart{
-  width: 40%;
+  width: 140px;
   height: 100px;
-  margin: 10px 0px auto 10px;
+  margin: auto;
 }
 .Summary-pie-chart{
-  width: 45%;
+  width: 155px;
   font-size: 2px;
-  margin: 10px 0px auto 0px;
+  margin: auto 0px auto 30px;
 }
 .divider{
  height: 100%;
- width: 10px;
+ width: 20px;
  border: 1px solid skyblue;
  background-color: skyblue;
+ margin: 0px auto;
 }
 .chartss{
   display: flex;
   flex-flow: row;
-  margin-left: 40px;
+ width: 450px4
 }
 canvas:hover{
 cursor: pointer;
@@ -1003,6 +1007,7 @@ h3{
     border-bottom-left-radius: 2px;
     border: 1px solid red;
     cursor: pointer;
+    /* background: url('delete.png'); */
 }
 .item{
     width: 100%;
@@ -1049,7 +1054,7 @@ h3{
     height: 200px;
     width: 250px;
     border: 1px solid skyblue;
-    z-index: 7;
+    /* z-index: 7; */
     border: none;
     border-radius: 10px;
     color: rgb(207, 206, 206);
@@ -1058,6 +1063,7 @@ h3{
     padding-top: 30px;
     margin: auto;
     border: 1px solid #8ac3db;
+   
 }
 .modal-head{
   margin-top: -12px;
@@ -1191,7 +1197,7 @@ h3{
     background-color: rgb(51, 51, 51);
     opacity: 0.7;
     cursor: pointer;
-    z-index: 5;
+    /* z-index: 5; */
 }
 .select-category{
       cursor: pointer;
